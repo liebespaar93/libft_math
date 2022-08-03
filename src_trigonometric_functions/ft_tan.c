@@ -28,3 +28,25 @@ double	ft_tan(double angle)
 	tan = ft_sin(angle) / ft_cos(angle);
 	return (tan);
 }
+
+double	ft_tan_plus(double angle1, double angle2)
+{
+	double	result;
+
+	angle1 = ft_cycle(angle1, C_PI);
+	angle2 = ft_cycle(angle2, C_PI);
+	result = (ft_tan(angle1) + ft_tan(angle2)) / \
+		(1 - ft_tan(angle1) * ft_tan(angle2));
+	return (result);
+}
+
+double	ft_tan_minus(double angle1, double angle2)
+{
+	double	result;
+
+	angle1 = ft_cycle(angle1, C_PI);
+	angle2 = ft_cycle(angle2, C_PI);
+	result = (ft_tan(angle1) - ft_tan(angle2)) / \
+		(1 + ft_tan(angle1) * ft_tan(angle2));
+	return (result);
+}

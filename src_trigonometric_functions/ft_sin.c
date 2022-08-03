@@ -15,6 +15,7 @@
     sin함수 반복을 많이하면 더 정확하며 0과 멀어질 수록 값의 오차가 생긴다.
     반복 횟수를 7이상 하는 것을 추천드린다
 	공식 :: https://en.wikipedia.org/wiki/Trigonometric_functions
+	동영상 :: https://www.youtube.com/watch?v=QdLVYN4rNNI
 */
 /* ************************************************************************** */
 
@@ -42,4 +43,24 @@ double	ft_sin(double angle)
 		num++;
 	}
 	return (sin);
+}
+
+double	ft_sin_plus(double angle1, double angle2)
+{
+	double	result;
+
+	angle1 = ft_cycle(angle1, C_PI);
+	angle2 = ft_cycle(angle2, C_PI);
+	result = ft_sin(angle1) * ft_cos(angle2) + ft_cos(angle1) * ft_sin(angle2);
+	return (result);
+}
+
+double	ft_sin_minus(double angle1, double angle2)
+{
+	double	result;
+
+	angle1 = ft_cycle(angle1, C_PI);
+	angle2 = ft_cycle(angle2, C_PI);
+	result = ft_sin(angle1) * ft_cos(angle2) - ft_cos(angle1) * ft_sin(angle2);
+	return (result);
 }
