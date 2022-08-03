@@ -64,3 +64,13 @@ double	ft_sin_minus(double angle1, double angle2)
 	result = ft_sin(angle1) * ft_cos(angle2) - ft_cos(angle1) * ft_sin(angle2);
 	return (result);
 }
+
+double	ft_cosec(double angle)
+{
+	double	sin;
+
+	sin = ft_sin(angle);
+	if (!sin)
+		return (1 / 1.7976931348623157e+308);
+	return (1 / sin);
+}

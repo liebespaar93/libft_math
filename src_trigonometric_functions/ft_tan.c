@@ -50,3 +50,13 @@ double	ft_tan_minus(double angle1, double angle2)
 		(1 + ft_tan(angle1) * ft_tan(angle2));
 	return (result);
 }
+
+double	ft_cot(double angle)
+{
+	double	tan;
+
+	tan = ft_tan(angle);
+	if (!tan)
+		return (1 / 1.7976931348623157e+308);
+	return (1 / tan);
+}
